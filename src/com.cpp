@@ -36,7 +36,6 @@ void com() {
     std::cout << "Division by zero!" << std::endl;
     return;
   }
-  //  *c = (((*m1) * (*p1)) + ((*m2) * (*p2))) / (*m1 + *m2);
   for (int j = 0; j < objCount; j++) {
     inter += (formula.mass->at(j) * formula.position->at(j));
   }
