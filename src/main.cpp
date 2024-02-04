@@ -1,6 +1,7 @@
+#include "avgVel.h"
 #include "com.h"
 
 int main() {
-  com();
+  avgVel();
   return 0;
 }
