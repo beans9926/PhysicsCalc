@@ -19,7 +19,7 @@ int main() {
     com();
     break;
   case 2:
-    avgVel();
+    inputAverageVelocity();
     break;
   case 0:
     std::cout << "\n\nExiting...";

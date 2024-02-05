@@ -3,6 +3,8 @@
 #include <numeric>
 #include <vector>
 
+void calculationAverageVelocity();
+
 struct {
   float timeSecondsStart;
   float timeSecondsEnd;
@@ -16,7 +18,7 @@ struct {
   std::vector<long double> *integFuncSummation = new std::vector<long double>;
 } velEqu;
 
-void avgVel() {
+void inputAverageVelocity() {
   std::cout << "Part for entering the equation and other required inputs, read "
                "intructions carefully";
   std::cout << "\nEnter the highest power of the equation (+ve integers only)";
@@ -42,6 +44,10 @@ void avgVel() {
                   velEqu.accuracyInRectangles;
   std::cout << velEqu.deltaX;
 
+  calculationAverageVelocity();
+}
+
+void calculationAverageVelocity() {
   long double a;
   for (int i = 0; i <= velEqu.accuracyInRectangles; i++) {
     a = 0.0;
