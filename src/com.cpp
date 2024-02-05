@@ -61,4 +61,6 @@ void com() {
   }
   *c = inter / (std::accumulate(formula.mass->begin(), formula.mass->end(), 0));
   std::cout << "The centre of mass is = " << *c << std::endl;
+
+  return;
 }

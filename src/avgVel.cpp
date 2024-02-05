@@ -74,4 +74,6 @@ void avgVel() {
 
   std::cout << "\nThe average velocity of the object is = "
             << velEqu.averageVelocity << std::endl;
+
+  return;
 }
