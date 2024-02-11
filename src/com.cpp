@@ -28,8 +28,6 @@ void com() {
   std::cout << "\nEnter the number of objects: ";
   std::cin >> objCount; // number of objects in the system
 
-  std::cout << "Enter the values ( '-0' if to be found ) \n";
-
   long double input;
   for (int i = 0; i < objCount; i++) {
     std::cout << "Mass for object " << i + 1 << " = ";

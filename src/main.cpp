@@ -27,7 +27,7 @@ int main() {
     chooseCalculationType();
     break;
   case 0:
-    std::cout << "\nExiting... ";
+    std::cout << "\nExiting...\n";
     break;
   default:
     std::cout << "\nOther symbols/characters were entered!";
