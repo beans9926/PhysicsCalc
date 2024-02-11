@@ -1,24 +1,82 @@
+// Code for calculating the average velocity of an object
+// This is done with using an equation that represents the velocity of an object
+// and calculating the area under that curve using trapezoidal rule
+
 #include <cmath>
 #include <iostream>
 #include <numeric>
 #include <vector>
+#include "printingUtils.h"
 
-void calculationAverageVelocity();
+
+
+void inputParamTrapezoidalAvgVel();
+void inputParamDivDistanceTime();
+void trapezoidalAverageVelocity();
+void divisionalAverageVelocity();
+
+
+
 
 struct {
   float timeSecondsStart;
   float timeSecondsEnd;
   unsigned int accuracyInRectangles;
   unsigned int highestPowerEquation;
-  long double deltaX;
-  long double integralCalculation = 0.0;
+  long double deltaX;                       // deltaX is the length of the subinterval
+  long double integralCalculation = 0.0;    // used for calculation of area of the subintervals
   long double averageVelocity = 0.0;
 
   std::vector<int> *coefficients = new std::vector<int>;
   std::vector<long double> *integFuncSummation = new std::vector<long double>;
+
+
+  // variables for distance time parameters
+  long double divChangeInPosition;
+  long double divChangeInTime;
 } velEqu;
 
-void inputAverageVelocity() {
+
+void chooseCalculationType(){
+
+  std::cout << "\n\nChoose the type of parameters you have:";
+  std::cout << "\n 1. Change in position & Duration of period"; 
+  std::cout << "\n 2. Equation of velocity, Duration of period\n";
+
+  short int calcType;
+  std::cin >> calcType;
+
+  switch (calcType) {
+    case 1:
+      regularTitleCard();
+      inputParamDivDistanceTime();
+      break;
+    case 2:
+      regularTitleCard();
+      inputParamTrapezoidalAvgVel();
+      break;
+    default:
+      std::cout << "\nUndefined choice! Try again!";
+      regularTitleCard();
+      chooseCalculationType();
+      break;
+  }
+}
+
+
+void inputParamDivDistanceTime(){
+  std::cout << "\nEnter the change in position: ";
+  std::cin >> velEqu.divChangeInPosition;
+
+  std::cout << "\nEnter the change in time: ";
+  std::cin >> velEqu.divChangeInTime;
+  
+  divisionalAverageVelocity();
+}
+
+
+void inputParamTrapezoidalAvgVel() {
+
   std::cout << "Part for entering the equation and other required inputs, read "
                "intructions carefully";
   std::cout << "\nEnter the highest power of the equation (+ve integers only)";
@@ -44,10 +102,17 @@ void inputAverageVelocity() {
                   velEqu.accuracyInRectangles;
   std::cout << velEqu.deltaX;
 
-  calculationAverageVelocity();
+  trapezoidalAverageVelocity();
 }
 
-void calculationAverageVelocity() {
+
+void divisionalAverageVelocity(){
+  std::cout << "\n\nThe Average Velocity of the object is = " 
+    << velEqu.divChangeInPosition / velEqu.divChangeInTime;
+}
+
+
+void trapezoidalAverageVelocity() {
   long double a;
   for (int i = 0; i <= velEqu.accuracyInRectangles; i++) {
     a = 0.0;

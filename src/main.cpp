@@ -1,10 +1,13 @@
 #include "avgVel.h"
 #include "com.h"
+#include "printingUtils.h"
 #include <iostream>
 
+
 int main() {
-  system("clear");
-  std::cout << "---------------Welcome to DynaCalc!---------------";
+
+  welcomeTitleCard();
+
   std::cout << "\nEnter your choice:";
   std::cout << "\n1. Centre of mass (Barycentric system)";
   std::cout << "\n2. Average velocity of an object (equation of velocity wrt. "
@@ -16,13 +19,15 @@ int main() {
 
   switch (inputInteger) {
   case 1:
+    regularTitleCard();
     com();
     break;
   case 2:
-    inputAverageVelocity();
+    regularTitleCard();
+    chooseCalculationType();
     break;
   case 0:
-    std::cout << "\n\nExiting...";
+    std::cout << "\nExiting... ";
     break;
   default:
     std::cout << "\nOther symbols/characters were entered!";

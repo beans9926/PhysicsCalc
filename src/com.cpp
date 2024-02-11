@@ -24,8 +24,8 @@ void com() {
   int objCount = 0;
   long double *c{&formula.cenOfMass};
 
-  std::cout << "Calculate Centre of Mass of a 2-object/Barycentric system \n";
-  std::cout << "Enter the number of objects: \n";
+  std::cout << "\nCalculate Centre of Mass of a 2-object/Barycentric system";
+  std::cout << "\nEnter the number of objects: ";
   std::cin >> objCount; // number of objects in the system
 
   std::cout << "Enter the values ( '-0' if to be found ) \n";
@@ -60,7 +60,7 @@ void com() {
     inter += (formula.mass->at(j) * formula.position->at(j));
   }
   *c = inter / (std::accumulate(formula.mass->begin(), formula.mass->end(), 0));
-  std::cout << "The centre of mass is = " << *c << std::endl;
+  std::cout << "\nThe centre of mass for the system is = " << *c << std::endl;
 
   return;
 }
