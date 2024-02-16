@@ -1,3 +1,3 @@
 #pragma once
 
-void chooseCalculationType();
+void chooseCalculationType();   //just a declaration
