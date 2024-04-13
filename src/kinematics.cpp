@@ -8,10 +8,10 @@ struct{
   double* acceleration = new double;
   double* displacement = new double;
   double* time = new double;
-};
+}kval;
 
 
 void kinematicEquationSelector(){
   short int selection;
-
+  
 }
